@@ -84,7 +84,8 @@ function GetHashes {
 
       foreach ( $file in $(Get-ChildItem -Recurse -File -Path $loc -ErrorAction Stop | Select-Object -ExpandProperty FullName)) { 
 
-        $objects = Get-FileHash $file -ErrorAction Stop | Select-Object Hash,Path
+        # Set "Literal Path so no strange file names are expanded"
+        $objects = Get-FileHash -LiteralPath $file -ErrorAction Stop | Select-Object Hash,Path
 
         if ($L_hash) {
 
