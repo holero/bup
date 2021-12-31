@@ -104,3 +104,5 @@ AB368102A7849049...AH3, C:\PATH\file.txt, COMPUTERNAME_DATE, CAT_NAME
 - Due to tar being a native linux tool, it has issues with drive letters that are found on windows (C:, E:, etc). If you provide full paths for you backup locations it works fine, however if you provide full paths on two separate drives that have the EXACT same dir structure, tar will merge them together instead of keeping them separate by drive. Tar literally trims off the drive letter when it is archiving.
 - The efficency of this script is questionable, thus might be slow with very large datasets
 - sbup.ps1's code is pretty messy since it was thrown together at the last second
+- Doesn't handle UNC paths (TODO)
+- If you only specify one location in the locations file script will crash because powershell will automatically change location to string instead of array (TODO)

@@ -39,7 +39,7 @@ function OpenFile {
   try {
 
     $L_locationData = Get-Content $L_location -ErrorAction Stop
-    
+
     if ($L_hash) {
 
       $L_hashData = Import-Csv -Path $L_hash -ErrorAction Stop
